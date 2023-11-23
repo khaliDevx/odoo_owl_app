@@ -1,0 +1,51 @@
+<?xml version='1.0' encoding='utf-8'?>
+<odoo>
+
+    <record id="todo_list_form" model="ir.ui.view">
+        <field name="name">todo.list.form</field>
+        <field name="model">todo.list</field>
+        <field name="arch" type="xml">
+            <form string="">
+                <header>
+                </header>
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                        <field name="color" widget="color"/>
+                        <field name="completed"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="todo_list_tree" model="ir.ui.view">
+        <field name="name">todo_list.tree</field>
+        <field name="model">todo.list</field>
+        <field name="arch" type="xml">
+            <tree string="" editable="bottom">
+                <field name="name"/>
+                <field name="color" widget="color"/>
+                <field name="completed"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="odoo_todo_list_menu_action" model="ir.actions.act_window">
+        <field name="name">Odoo Todo List</field>
+        <field name="res_model">todo.list</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <record id="owl_todo_list_menu_action" model="ir.actions.client">
+        <field name="name">Owl Todo List</field>
+        <field name="tag">owl_app.action_todo_list_js</field>
+    </record>
+
+    <menuitem id="owl_app_menu" name="Owl App" sequence="10" web_icon="owl_app,static/description/icon.png">
+        <menuitem id="odoo_todo_list_menu" name="Odoo Todo List" action="odoo_todo_list_menu_action" sequence="1"/>
+        <menuitem id="owl_todo_list_menu" name="Owl Todo List" action="owl_todo_list_menu_action" sequence="2"/>
+    </menuitem>
+
+
+</odoo>
