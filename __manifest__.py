@@ -16,7 +16,7 @@
       ],
       "assets": {
             'web.assets_backend': [
-                  'owl_app/static/src/components/**/*',
+                  'odoo_owl_app/static/src/components/**/*',
             ],
       },
       "application":  True,

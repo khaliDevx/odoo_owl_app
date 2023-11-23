@@ -80,5 +80,5 @@ export class TodoListContainer extends Component {
 
 }
 
-TodoListContainer.template = "owl_app.TodoListContainer";
-registry.category('actions').add('owl_app.action_todo_list_js', TodoListContainer);
+TodoListContainer.template = "odoo_owl_app.TodoListContainer";
+registry.category('actions').add('odoo_owl_app.action_todo_list_js', TodoListContainer);
