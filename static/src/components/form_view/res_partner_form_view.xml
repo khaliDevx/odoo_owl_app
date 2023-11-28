@@ -1,0 +1,8 @@
+<?xml version='1.0' encoding='utf-8'?>
+<templates xml:space="preserve">
+    <t t-name="odoo_owl_app.ResPartnerFormView" t-inherit="web.FormView" owl="1">
+        <xpath expr="//button[hasclass('o_form_button_create')]" position="after">
+            <a target="_blank" href="#" class="btn btn-info ms-2" t-on-click="()=>this.openWebsite(model.root.data.website)">Go to Website</a>
+        </xpath>
+    </t>
+</templates>

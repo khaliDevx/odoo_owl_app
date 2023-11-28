@@ -1,0 +1,28 @@
+<?xml version='1.0' encoding='utf-8'?>
+<templates xml:space="preserve">
+    <t t-name="odoo_owl_app.ResPartnerKanbanView.Buttons" t-inherit="web.KanbanView.Buttons" owl="1">
+        <xpath expr="//t[contains(@t-if, 'canCreate')]" position="after">
+            <button type="button" class="btn btn-outline-info ms-2" t-on-click="openSaleOrderView">Sales Orders</button>
+            <button type="button" class="btn btn-outline-info ms-2" t-on-click="openAccountMoveView">Invoices</button>
+        </xpath>
+    </t>
+    <t t-name="odoo_owl_app.ResPartnerKanbanView" t-inherit="web.KanbanView" owl="1">
+        <xpath expr="//t[contains(@t-component, 'props.Renderer')]" position="before">
+            <div class="p-3 bg-white o_res_partner_kanban_view_sidebar">
+                <h2>Customers Locations</h2>
+
+                <div class="list-group">
+                    <t t-foreach="customerLocations" t-as="location" t-key="location.state_id[0]">
+                        <a class="list-group-item" href='#' t-on-click="()=>this.filterCustomers(location.state_id)">
+                            <span t-esc="location.state_id[1]"/> -
+                            <span t-esc="location.state_id_count" class="badge bg-primary text-white"/>
+                        </a>
+                    </t>
+                </div>
+            </div>
+        </xpath>
+        <xpath expr="//Layout" position="attributes">
+            <attribute name="className">model.useSampleModel ? 'o_view_sample_data' : '' + "d-flex"</attribute>
+        </xpath>
+    </t>
+</templates>
