@@ -8,11 +8,12 @@
       "category":  "OWL",
       "sequence":  -1,
       "author":  "Khalid",
-      "depends": ['base'],
+      "depends": ['contacts', 'sale'],
       "demo": [],
       "data": [
             'security/ir.model.access.csv',
             'views/todo_list_view.xml',
+            'views/res_partner.xml',
       ],
       "assets": {
             'web.assets_backend': [
